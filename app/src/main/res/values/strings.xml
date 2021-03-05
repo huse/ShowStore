@@ -26,4 +26,5 @@
     <string name="enter_color">Enter color</string>
     <string name="enter_size">Enter size</string>
     <string name="enter_model">Enter model</string>
+    <string name="number">No.</string>
 </resources>

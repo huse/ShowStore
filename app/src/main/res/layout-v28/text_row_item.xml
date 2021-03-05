@@ -17,12 +17,14 @@
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="20dp"
         android:outlineAmbientShadowColor="@android:color/background_dark"
+        android:outlineSpotShadowColor="@color/black"
         >
 
         <TextView
             android:id="@+id/number_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@android:color/holo_red_dark"
             android:text="@string/number" />
 
 

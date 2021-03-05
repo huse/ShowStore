@@ -10,6 +10,6 @@ class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView), View.OnCli
     override fun onClick(v: View) {}
 
     init {
-        textView = itemView.findViewById<View>(R.id.textView) as TextView
+        textView = itemView.findViewById<View>(R.id.number_text) as TextView
     }
 }

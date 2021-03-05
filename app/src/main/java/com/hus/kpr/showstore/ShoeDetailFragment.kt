@@ -39,8 +39,10 @@ class ShoeDetailFragment : Fragment() {
     ): View? {
 
         val binding = DataBindingUtil.inflate<FragmentShoeDetailBinding>(inflater, R.layout.fragment_shoe_detail, container, false)
-        binding.buttonSaveShoe.setOnClickListener(
-            Navigation.createNavigateOnClickListener(R.id.action_shoeDetailFragment_to_shoeListFragment))
+        binding.buttonSaveShoe.setOnClickListener{
+            Navigation.createNavigateOnClickListener(R.id.action_shoeDetailFragment_to_shoeListFragment)
+
+        }
         binding.buttonCancelShoe.setOnClickListener(
             Navigation.createNavigateOnClickListener(R.id.action_shoeDetailFragment_to_shoeListFragment))
         return binding.root
