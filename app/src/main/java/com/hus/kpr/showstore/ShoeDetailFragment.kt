@@ -5,10 +5,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
+import androidx.navigation.findNavController
+import com.hus.kpr.showstore.data.DataShoe
 import com.hus.kpr.showstore.databinding.FragmentInstructionsBinding
 import com.hus.kpr.showstore.databinding.FragmentShoeDetailBinding
+import com.hus.kpr.showstore.ui.login.ShoeDetailViewModel
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -24,6 +29,8 @@ class ShoeDetailFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    lateinit var viewModel: ShoeDetailViewModel
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,13 +41,33 @@ class ShoeDetailFragment : Fragment() {
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
 
+        super.onCreateView(inflater, container, savedInstanceState)
         val binding = DataBindingUtil.inflate<FragmentShoeDetailBinding>(inflater, R.layout.fragment_shoe_detail, container, false)
+        viewModel = ViewModelProvider(requireActivity()).get(ShoeDetailViewModel::class.java)
+        binding.lifecycleOwner = this
         binding.buttonSaveShoe.setOnClickListener{
-            Navigation.createNavigateOnClickListener(R.id.action_shoeDetailFragment_to_shoeListFragment)
+
+            DataShoe(
+                "1",
+                binding.shoeModelEdit.text.toString(),
+                binding.shoeSizeEdit.text.toString(),
+                binding.shoeColorEdit.text.toString(),
+                binding.shoeDescriptionEdit.text.toString()
+            ).also { binding.dataShoeInxmlfile = it }
+
+            val detailsShoeNumberss = binding.dataShoeInxmlfile
+            viewModel.saveCurrentDetail(detailsShoeNumberss)
+            //val gg: String = binding.shoeModelEdit.text.toString()
+            //val gg: String = it.toString()
+            //Toast.makeText(context,gg, Toast.LENGTH_LONG).show()
+            //Navigation.createNavigateOnClickListener(R.id.action_shoeDetailFragment_to_shoeListFragment)
+
+            view?.findNavController()?.navigate(R.id.action_shoeDetailFragment_to_shoeListFragment)
 
         }
         binding.buttonCancelShoe.setOnClickListener(

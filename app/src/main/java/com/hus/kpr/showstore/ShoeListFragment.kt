@@ -8,12 +8,18 @@ import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
+import com.hus.kpr.showstore.data.DataShoe
 import com.hus.kpr.showstore.databinding.FragmentInstructionsBinding
 import com.hus.kpr.showstore.databinding.FragmentShoeListListBinding
 import com.hus.kpr.showstore.dummy.DummyContent
 import com.hus.kpr.showstore.recycler.CustomAdapter
+import com.hus.kpr.showstore.ui.login.ShoeDetailViewModel
 import java.util.ArrayList
 
 /**
@@ -42,27 +48,27 @@ class ShoeListFragment : Fragment() {
         binding.buttonAddShoe.setOnClickListener(
             Navigation.createNavigateOnClickListener(R.id.action_shoeListFragment_to_shoeDetailFragment))
 
-        val b = ArrayList<Int>()
+/*        val b = ArrayList<Int>()
         for (i in 0..29) {
             b.add(i)
         }
+        val dataShoe: DataShoe
         val mRecyclerView = binding.list
+
         mRecyclerView.setLayoutManager( LinearLayoutManager(getActivity()))
-        val customAdapter = CustomAdapter(b)
-        mRecyclerView.adapter = customAdapter
+        val customAdapter = CustomAdapter(dataShoe)
+        mRecyclerView.adapter = customAdapter*/
 
- /*       // Set the adapter
-        if (view is RecyclerView) {
-            with(view) {
-                layoutManager = when {
-                    columnCount <= 1 -> LinearLayoutManager(context)
-                    else -> GridLayoutManager(context, columnCount)
-                }
-                adapter = MyItemRecyclerViewAdapter(DummyContent.ITEMS)
-            }
-        }*/
-        //return view
 
+        val model = ViewModelProvider(requireActivity()).get(ShoeDetailViewModel::class.java)
+
+        binding.lifecycleOwner = this
+
+        model.shoes.observe(viewLifecycleOwner, Observer { list ->
+            val adapter = CustomAdapter(list)
+            binding.list.adapter = adapter
+        })
+        (activity as AppCompatActivity).supportActionBar?.title = getString(R.string.shoe_detail)
 
         return binding.root
     }

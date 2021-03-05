@@ -5,10 +5,12 @@
 
     >
     <data>
-
         <variable
+            name="dataShoeInxmlfile"
+            type="com.hus.kpr.showstore.data.DataShoe" />
+<!--        <variable
             name="ShoeDetailFragment"
-            type="com.hus.kpr.showstore.ShoeDetailFragment" />
+            type="com.hus.kpr.showstore.ShoeDetailFragment" />-->
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -31,6 +33,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
             android:layout_width="match_parent"
             android:layout_height="250dp"
             android:layout_marginTop="8dp"
@@ -113,21 +116,6 @@
             app:layout_constraintStart_toStartOf="parent">
 
 
-            <TextView
-                android:id="@+id/shoe_description"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/shoe_descriptions"
-                tools:layout_editor_absoluteX="71dp"
-                tools:layout_editor_absoluteY="322dp" />
-
-            <EditText
-                android:id="@+id/shoe_details_edit"
-                android:layout_width="match_parent"
-                android:layout_height="300dp"
-                android:hint="@string/enter_your_thought"
-                tools:layout_editor_absoluteX="71dp"
-                tools:layout_editor_absoluteY="341dp" />
         </LinearLayout>
 
 
@@ -151,6 +139,23 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/button_save_shoe" />
+
+        <EditText
+            android:id="@+id/shoe_description_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="@string/enter_your_thought"
+            app:layout_constraintTop_toBottomOf="@+id/shoe_description"
+            tools:layout_editor_absoluteX="0dp" />
+
+        <TextView
+            android:id="@+id/shoe_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/shoe_descriptions"
+            app:layout_constraintStart_toStartOf="@+id/shoe_description_edit"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

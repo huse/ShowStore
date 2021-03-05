@@ -22,9 +22,9 @@
     <string name="shoe_size">Shoe Size</string>
     <string name="shoe_color">Shoe Color</string>
     <string name="enter_your_thought">Enter your thought</string>
-    <string name="shoe_descriptions">Shoe Descriptions</string>
+    <string name="shoe_descriptions">Shoe Descriptions:   </string>
     <string name="enter_color">Enter color</string>
     <string name="enter_size">Enter size</string>
     <string name="enter_model">Enter model</string>
-    <string name="number">No.</string>
+    <string name="number">1</string>
 </resources>

@@ -49,7 +49,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/model_text"
+            android:id="@+id/model_text_row"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="model"
@@ -69,7 +69,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/color_text"
+            android:id="@+id/color_text_row"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="color"
@@ -89,7 +89,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/size_text"
+            android:id="@+id/size_text_row"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="size"
@@ -116,7 +116,7 @@
             android:layout_height="wrap_content"
             android:text="@string/shoe_descriptions" />
         <TextView
-            android:id="@+id/desc_text"
+            android:id="@+id/desc_text_row"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/number" />

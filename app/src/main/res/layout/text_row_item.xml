@@ -17,7 +17,7 @@
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="20dp"
         android:outlineAmbientShadowColor="@android:color/background_dark"
-        >
+        tools:targetApi="p">
 
         <TextView
             android:id="@+id/number_text"
@@ -47,7 +47,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/model_text"
+            android:id="@+id/model_text_row"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="model"
@@ -67,7 +67,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/color_text"
+            android:id="@+id/color_text_row"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="color"
@@ -87,7 +87,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/size_text"
+            android:id="@+id/size_text_row"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="size"
@@ -112,12 +112,24 @@
             android:id="@+id/desc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/shoe_descriptions" />
+            android:text="@string/shoe_descriptions"
+            android:layout_marginEnd="@android:dimen/app_icon_size"
+            android:padding="@android:dimen/dialog_min_width_minor"/>
         <TextView
-            android:id="@+id/desc_text"
+            android:id="@+id/space"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@android:dimen/app_icon_size"
+
+            android:text="   hhjhjhkjh "
+            android:padding="@android:dimen/dialog_min_width_minor"/>
+        <TextView
+            android:id="@+id/desc_text_row"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/number" />
+            android:text="@string/number"
+
+            android:layout_marginStart="@android:dimen/app_icon_size"/>
 
 
 
