@@ -7,8 +7,8 @@
     <data>
 
         <variable
-            name="ShoeDetailFragment"
-            type="com.hus.kpr.showstore.ShoeDetailFragment" />
+            name="InstructionsFragment"
+            type="com.hus.kpr.showstore.InstructionsFragment" />
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
@@ -16,10 +16,21 @@
     tools:context=".InstructionsFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/instruction" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/instruction"
+            app:layout_constraintBottom_toTopOf="@+id/button_instruction"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/button_instruction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/go_to_list"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

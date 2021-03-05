@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.Navigation
+import com.hus.kpr.showstore.databinding.FragmentInstructionsBinding
 import com.hus.kpr.showstore.databinding.FragmentOnboardingBinding
 
 
@@ -24,9 +25,9 @@ class InstructionsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val binding = DataBindingUtil.inflate<FragmentOnboardingBinding>(inflater, R.layout.fragment_onboarding, container, false)
-        binding.onboarding.setOnClickListener(
-            Navigation.createNavigateOnClickListener(R.id.action_onboardingFragment_to_instructionsFragment))
+        val binding = DataBindingUtil.inflate<FragmentInstructionsBinding>(inflater, R.layout.fragment_instructions, container, false)
+        binding.buttonInstruction.setOnClickListener(
+            Navigation.createNavigateOnClickListener(R.id.action_instructionsFragment_to_shoeListFragment))
         return binding.root
     }
 

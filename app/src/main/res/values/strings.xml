@@ -14,4 +14,16 @@
     <string name="instruction">ON NEXT PAGE PRESS ADD SHOE BUTTON TO ADD A SHOE TO YOUR LIST.</string>
     <string name="add_shoe">Add Shoe</string>
     <string name="go_to_instruction">Go to instruction</string>
+    <string name="go_to_list">Go to List</string>
+    <string name="shoe_detail">Shoe Detail</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="shoe_model">Shoe Model</string>
+    <string name="shoe_size">Shoe Size</string>
+    <string name="shoe_color">Shoe Color</string>
+    <string name="enter_your_thought">Enter your thought</string>
+    <string name="shoe_descriptions">Shoe Descriptions</string>
+    <string name="enter_color">Enter color</string>
+    <string name="enter_size">Enter size</string>
+    <string name="enter_model">Enter model</string>
 </resources>

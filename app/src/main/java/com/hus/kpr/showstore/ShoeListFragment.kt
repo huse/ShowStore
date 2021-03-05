@@ -8,6 +8,10 @@ import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
+import androidx.navigation.Navigation
+import com.hus.kpr.showstore.databinding.FragmentInstructionsBinding
+import com.hus.kpr.showstore.databinding.FragmentShoeListListBinding
 import com.hus.kpr.showstore.dummy.DummyContent
 
 /**
@@ -25,10 +29,16 @@ class ShoeListFragment : Fragment() {
         }
     }
 
+
+
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        val binding = DataBindingUtil.inflate<FragmentShoeListListBinding>(inflater, R.layout.fragment_shoe_list_list, container, false)
+        binding.buttonAddShoe.setOnClickListener(
+            Navigation.createNavigateOnClickListener(R.id.action_shoeListFragment_to_shoeDetailFragment))
         val view = inflater.inflate(R.layout.fragment_shoe_list_list, container, false)
 
         // Set the adapter
@@ -41,7 +51,10 @@ class ShoeListFragment : Fragment() {
                 adapter = MyItemRecyclerViewAdapter(DummyContent.ITEMS)
             }
         }
-        return view
+        //return view
+
+
+        return binding.root
     }
 
     companion object {
