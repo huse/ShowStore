@@ -13,6 +13,8 @@ import androidx.navigation.Navigation
 import com.hus.kpr.showstore.databinding.FragmentInstructionsBinding
 import com.hus.kpr.showstore.databinding.FragmentShoeListListBinding
 import com.hus.kpr.showstore.dummy.DummyContent
+import com.hus.kpr.showstore.recycler.CustomAdapter
+import java.util.ArrayList
 
 /**
  * A fragment representing a list of Items.
@@ -39,9 +41,17 @@ class ShoeListFragment : Fragment() {
         val binding = DataBindingUtil.inflate<FragmentShoeListListBinding>(inflater, R.layout.fragment_shoe_list_list, container, false)
         binding.buttonAddShoe.setOnClickListener(
             Navigation.createNavigateOnClickListener(R.id.action_shoeListFragment_to_shoeDetailFragment))
-        val view = inflater.inflate(R.layout.fragment_shoe_list_list, container, false)
 
-        // Set the adapter
+        val b = ArrayList<Int>()
+        for (i in 0..29) {
+            b.add(i)
+        }
+        val mRecyclerView = binding.list
+        mRecyclerView.setLayoutManager( LinearLayoutManager(getActivity()))
+        val customAdapter = CustomAdapter(b)
+        mRecyclerView.adapter = customAdapter
+
+ /*       // Set the adapter
         if (view is RecyclerView) {
             with(view) {
                 layoutManager = when {
@@ -50,12 +60,14 @@ class ShoeListFragment : Fragment() {
                 }
                 adapter = MyItemRecyclerViewAdapter(DummyContent.ITEMS)
             }
-        }
+        }*/
         //return view
 
 
         return binding.root
     }
+
+
 
     companion object {
 
