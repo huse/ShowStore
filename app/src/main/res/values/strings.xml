@@ -11,6 +11,7 @@
     <string name="login_failed">"Login failed"</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Welcome to Shoe Store</string>
-    <string name="instruction">instruction</string>
+    <string name="instruction">ON NEXT PAGE PRESS ADD SHOE BUTTON TO ADD A SHOE TO YOUR LIST.</string>
     <string name="add_shoe">Add Shoe</string>
+    <string name="go_to_instruction">Go to instruction</string>
 </resources>

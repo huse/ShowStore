@@ -15,9 +15,12 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ProgressBar
 import android.widget.Toast
+import androidx.databinding.DataBindingUtil
+import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 
 import com.hus.kpr.showstore.R
+import com.hus.kpr.showstore.databinding.FragmentLoginBinding
 
 class LoginFragment : Fragment() {
 
@@ -28,7 +31,12 @@ class LoginFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_login, container, false)
+        val binding = DataBindingUtil.inflate<FragmentLoginBinding>(inflater, R.layout.fragment_login, container, false)
+        binding.login.setOnClickListener(
+            Navigation.createNavigateOnClickListener(R.id.action_loginFragment_to_onboardingFragment))
+
+        return binding.root
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -95,14 +103,14 @@ class LoginFragment : Fragment() {
             false
         }
 
-        loginButton.setOnClickListener {
+        /*loginButton.setOnClickListener {
             loadingProgressBar.visibility = View.VISIBLE
             loginViewModel.login(
                 usernameEditText.text.toString(),
                 passwordEditText.text.toString()
             )
 
-            }
+            }*/
     }
 
     private fun updateUiWithUser(model: LoggedInUserView) {
