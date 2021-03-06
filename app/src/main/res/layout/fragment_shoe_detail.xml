@@ -8,10 +8,13 @@
         <variable
             name="dataShoeInxmlfile"
             type="com.hus.kpr.showstore.data.DataShoe" />
-<!--        <variable
+<!-- Addresses code review here and added : "All EditViews correctly refer to created class variable"      -->
+        <variable
             name="ShoeDetailFragment"
-            type="com.hus.kpr.showstore.ShoeDetailFragment" />-->
+            type="com.hus.kpr.showstore.ShoeDetailFragment" />
     </data>
+    <!--  Used constraint layout to easily manage elements on page and constrain then together to remain in same position if screen changes on different platform or display rotation-->
+    <!--  Also used linear layout to confine none complex elements in a linear layout to order them vertically and can manage them as a whole in constrain layout -->
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

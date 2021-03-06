@@ -5,22 +5,37 @@
     tools:context=".ShoeListFragment"
 
     >
+
+    <data>
+        <variable
+            name="ShoeListFragment2"
+            type="com.hus.kpr.showstore.listshoe.ShoeListFragment2" />
+
+    </data>
     <!--    used constraint layout to easily manage elements on page and constrain then together to remain in same position if screen changes on different platform or display rotation-->
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/list"
-            android:name="com.hus.kpr.showstore.ShoeListFragment"
+        <ScrollView
+            android:id="@+id/scrolingShoeListView"
             android:layout_width="match_parent"
-            android:layout_height="670dp"
-            app:layoutManager="LinearLayoutManager"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:context=".ShoeListFragment"
-            tools:layout_editor_absoluteX="0dp"
-            tools:listitem="@layout/fragment_shoe_list" />
+            android:layout_height="569dp"
+            app:layout_constraintBottom_toTopOf="@+id/button_Logout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:id="@+id/shoe_list_inside_scroll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+            </LinearLayout>
+
+        </ScrollView>
 
         <Button
             android:id="@+id/button_add_shoe"

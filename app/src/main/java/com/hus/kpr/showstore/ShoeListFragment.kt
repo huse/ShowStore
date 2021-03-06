@@ -39,16 +39,18 @@ class ShoeListFragment : Fragment() {
 
 
 
-    override fun onCreateView(
+/*    override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val binding = DataBindingUtil.inflate<FragmentShoeListListBinding>(inflater, R.layout.fragment_shoe_list_list, container, false)
+       *//* val binding = DataBindingUtil.inflate<FragmentShoeListListBinding>(inflater, R.layout.fragment_shoe_list_list, container, false)
         binding.buttonAddShoe.setOnClickListener(
             Navigation.createNavigateOnClickListener(R.id.action_shoeListFragment_to_shoeDetailFragment))
+        binding.buttonLogout.setOnClickListener(
+                Navigation.createNavigateOnClickListener(R.id.action_shoeListFragment_to_loginFragment))*//*
 
-/*        val b = ArrayList<Int>()
+*//*        val b = ArrayList<Int>()
         for (i in 0..29) {
             b.add(i)
         }
@@ -57,12 +59,12 @@ class ShoeListFragment : Fragment() {
 
         mRecyclerView.setLayoutManager( LinearLayoutManager(getActivity()))
         val customAdapter = CustomAdapter(dataShoe)
-        mRecyclerView.adapter = customAdapter*/
+        mRecyclerView.adapter = customAdapter*//*
 
 
         val model = ViewModelProvider(requireActivity()).get(ShoeDetailViewModel::class.java)
 
-        binding.lifecycleOwner = this
+*//*        binding.lifecycleOwner = this
 
         model.shoes.observe(viewLifecycleOwner, Observer { list ->
             val adapter = CustomAdapter(list)
@@ -70,8 +72,8 @@ class ShoeListFragment : Fragment() {
         })
         (activity as AppCompatActivity).supportActionBar?.title = getString(R.string.shoe_detail)
 
-        return binding.root
-    }
+        return binding.root*//*
+    }*/
 
 
 

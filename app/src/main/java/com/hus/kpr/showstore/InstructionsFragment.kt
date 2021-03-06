@@ -27,7 +27,7 @@ class InstructionsFragment : Fragment() {
     ): View? {
         val binding = DataBindingUtil.inflate<FragmentInstructionsBinding>(inflater, R.layout.fragment_instructions, container, false)
         binding.buttonInstruction.setOnClickListener(
-            Navigation.createNavigateOnClickListener(R.id.action_instructionsFragment_to_shoeListFragment))
+            Navigation.createNavigateOnClickListener(R.id.action_instructionsFragment_to_shoeListFragment22))
         return binding.root
     }
 

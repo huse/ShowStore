@@ -1,137 +1,150 @@
 <?xml version="1.0" encoding="utf-8"?>
 
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="ViewHolder"
+            type="com.hus.kpr.showstore.recycler.ViewHolder" />
+        <variable
+            name="DataShoe2"
+            type="com.hus.kpr.showstore.data.DataShoe" />
+
+    </data>
+
     <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/line1"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:orientation="vertical">
 
-    <LinearLayout
-        android:id="@+id/line2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="20dp"
-        android:outlineAmbientShadowColor="@android:color/background_dark"
-        tools:targetApi="p">
-
-        <TextView
-            android:id="@+id/number_text"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:id="@+id/line2"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/number" />
+            android:orientation="horizontal"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="20dp"
+            android:outlineAmbientShadowColor="@android:color/background_dark"
+            tools:targetApi="p">
+
+            <TextView
+                android:id="@+id/number_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/number" />
 
 
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/line3"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="20dp">
+
+            <TextView
+                android:id="@+id/model"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/shoe_model"
+                app:layout_constraintEnd_toStartOf="@+id/color"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/model_text_row"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="model"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/model"
+                app:layout_constraintStart_toStartOf="@+id/model"
+                app:layout_constraintTop_toBottomOf="@+id/model" />
+
+            <TextView
+                android:id="@+id/color"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/shoe_color"
+                app:layout_constraintEnd_toStartOf="@+id/size"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/model"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/color_text_row"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="color"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/color"
+                app:layout_constraintStart_toStartOf="@+id/color"
+                app:layout_constraintTop_toBottomOf="@+id/color" />
+
+            <TextView
+                android:id="@+id/size"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/shoe_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/color"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/size_text_row"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/size"
+                app:layout_constraintStart_toStartOf="@+id/size"
+                app:layout_constraintTop_toBottomOf="@+id/size" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <LinearLayout
+            android:id="@+id/line4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="20dp">
+
+            <TextView
+                android:id="@+id/desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/shoe_descriptions"
+                android:layout_marginEnd="@android:dimen/app_icon_size"
+                android:padding="@android:dimen/dialog_min_width_minor" />
+
+            <TextView
+                android:id="@+id/space"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@android:dimen/app_icon_size"
+
+                android:text="   hhjhjhkjh "
+                android:padding="@android:dimen/dialog_min_width_minor" />
+
+            <TextView
+                android:id="@+id/desc_text_row"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/number"
+
+                android:layout_marginStart="@android:dimen/app_icon_size" />
+
+
+        </LinearLayout>
     </LinearLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/line3"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:orientation="horizontal"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="20dp">
-
-        <TextView
-            android:id="@+id/model"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/shoe_model"
-            app:layout_constraintEnd_toStartOf="@+id/color"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/model_text_row"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="model"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/model"
-            app:layout_constraintStart_toStartOf="@+id/model"
-            app:layout_constraintTop_toBottomOf="@+id/model" />
-
-        <TextView
-            android:id="@+id/color"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/shoe_color"
-            app:layout_constraintEnd_toStartOf="@+id/size"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/model"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/color_text_row"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="color"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/color"
-            app:layout_constraintStart_toStartOf="@+id/color"
-            app:layout_constraintTop_toBottomOf="@+id/color" />
-
-        <TextView
-            android:id="@+id/size"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/shoe_size"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/color"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/size_text_row"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="size"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/size"
-            app:layout_constraintStart_toStartOf="@+id/size"
-            app:layout_constraintTop_toBottomOf="@+id/size" />
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-    <LinearLayout
-        android:id="@+id/line4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="20dp">
-
-        <TextView
-            android:id="@+id/desc"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/shoe_descriptions"
-            android:layout_marginEnd="@android:dimen/app_icon_size"
-            android:padding="@android:dimen/dialog_min_width_minor"/>
-        <TextView
-            android:id="@+id/space"
-            android:layout_width="60dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@android:dimen/app_icon_size"
-
-            android:text="   hhjhjhkjh "
-            android:padding="@android:dimen/dialog_min_width_minor"/>
-        <TextView
-            android:id="@+id/desc_text_row"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/number"
-
-            android:layout_marginStart="@android:dimen/app_icon_size"/>
-
-
-
-    </LinearLayout>
-    </LinearLayout>
+</layout>

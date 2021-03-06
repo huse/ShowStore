@@ -8,6 +8,7 @@
             name="game"
             type="com.hus.kpr.showstore.ShoeListFragment" />
     </data>
+    <!--Also used linear layout to confine none complex elements in a linear layout to order them vertically  -->
 
 <LinearLayout
     android:layout_width="wrap_content"

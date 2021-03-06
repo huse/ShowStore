@@ -10,7 +10,9 @@
             name="OnboardingFragment"
             type="com.hus.kpr.showstore.OnboardingFragment" />
     </data>
-<androidx.constraintlayout.widget.ConstraintLayout
+    <!--    used constraint layout to easily manage elements on page and constrain then together to remain in same position if screen changes on different platform or display rotation-->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".OnboardingFragment">

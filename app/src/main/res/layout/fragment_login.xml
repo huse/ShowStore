@@ -8,6 +8,7 @@
             name="LoginFragment"
             type="com.hus.kpr.showstore.ui.login.LoginFragment" />
     </data>
+    <!--    used constraint layout to easily manage elements on page and constrain then together to remain in same position if screen changes on different platform or display rotation-->
 
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:app="http://schemas.android.com/apk/res-auto"
