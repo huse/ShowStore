@@ -10,7 +10,7 @@ class ShoeDetailViewModel  : ViewModel() {
     val shoesLists = MutableLiveData<MutableList<DataShoe>>(mutableListOf())
 
 
-    val shoes: LiveData<MutableList<DataShoe>>
+    val getShoes: LiveData<MutableList<DataShoe>>
         get() = shoesLists
 
     fun saveCurrentDetail(detail: DataShoe?) {

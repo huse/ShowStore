@@ -1,17 +1,23 @@
 package com.hus.kpr.showstore.listshoe
 
 import android.os.Bundle
+import android.util.Log
 import android.view.*
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import com.hus.kpr.showstore.R
 import com.hus.kpr.showstore.data.DataShoe
 import com.hus.kpr.showstore.databinding.FragmentShoeListList2Binding
 import com.hus.kpr.showstore.databinding.TextRowItemBinding
+import com.hus.kpr.showstore.recycler.CustomAdapter
+import com.hus.kpr.showstore.ui.login.ShoeDetailViewModel
 
 import timber.log.Timber
 
@@ -27,11 +33,11 @@ class ShoeListFragment2  : Fragment(){
 
         binding.lifecycleOwner = this
 
-        shoeListingsViewModel.getShoesLiveDatas().observe(viewLifecycleOwner, {
-            val gg: String = it.toString()
+        /*shoeListingsViewModel.getShoesLiveDatas().observe(viewLifecycleOwner, {
+            val gg: String = it.toString()+ "this is list"
             Toast.makeText(context,gg, Toast.LENGTH_LONG).show()
             if (it.isNotEmpty()) {
-                Timber.d(gg,"list")
+                Timber.i(gg)
                 context?.let { context ->
                     val shoeContainer = binding.shoeListInsideScroll
                     it.forEach { shoe ->
@@ -43,8 +49,32 @@ class ShoeListFragment2  : Fragment(){
                     }
                 }
             }
-        })
+        })*/
 
+
+     val model = ViewModelProvider(requireActivity()).get(ShoeDetailViewModel::class.java)
+
+     binding.lifecycleOwner = this
+
+     model.getShoes.observe(viewLifecycleOwner, Observer { list ->
+         //val adapter = CustomAdapter(list)
+         //binding.list.adapter = adapter
+
+         if (list.isNotEmpty()) {
+             context?.let { context ->
+                 val shoeContainer = binding.shoeListInsideScroll
+                 list.forEach { shoe ->
+                     //Code fails here:
+                     val shoeLayout = LaoutShoes(context)
+                     shoeLayout.loadingShoeToList(shoe)
+                     shoeContainer.addView(shoeLayout)
+                     //shoeContainer.addView(loadingShoeToList(shoe))
+                 }
+             }
+         }
+
+     })
+     (activity as AppCompatActivity).supportActionBar?.title = getString(R.string.shoe_detail)
        binding.buttonAddShoe.setOnClickListener {
 
            val gg: String = it.toString()

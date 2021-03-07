@@ -23,7 +23,7 @@ class LaoutShoes: LinearLayout {
     fun loadingShoeToList(shoe: DataShoe) {
         binding.apply {
             addView(this.root)
-            numberText.text  = shoe.number
+            //numberText.text  = shoe.number
             modelTextRow.text = shoe.model
             colorTextRow.text = shoe.color
             sizeTextRow.text = shoe.size

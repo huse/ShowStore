@@ -7,6 +7,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.hus.kpr.showstore.data.DataShoe
+import com.hus.kpr.showstore.*
+
 
 class ShoelistViewModel : ViewModel(), Observable {
     private val propertyChangeRegistry = PropertyChangeRegistry()
@@ -18,7 +20,7 @@ class ShoelistViewModel : ViewModel(), Observable {
         set(value) {
             if(value != field) {
                 field = value
-                propertyChangeRegistry.notifyChange(this, 15)
+                propertyChangeRegistry.notifyChange(this, 6)
             }
         }
 

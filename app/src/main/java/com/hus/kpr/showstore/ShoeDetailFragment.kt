@@ -5,14 +5,17 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import androidx.navigation.findNavController
+import com.hus.kpr.showstore.data.DataShoe
 import com.hus.kpr.showstore.databinding.FragmentShoeDetailBinding
 import com.hus.kpr.showstore.listshoe.ShoelistViewModel
 import com.hus.kpr.showstore.ui.login.ShoeDetailViewModel
+import timber.log.Timber
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -50,10 +53,20 @@ class ShoeDetailFragment : Fragment() {
         val binding = DataBindingUtil.inflate<FragmentShoeDetailBinding>(inflater, R.layout.fragment_shoe_detail, container, false)
         viewModel = ViewModelProvider(requireActivity()).get(ShoeDetailViewModel::class.java)
         binding.lifecycleOwner = this
-        binding.buttonSaveShoe.setOnClickListener{
+        binding.shoelistViewModels = shoeListingsViewModel
+        binding.dataShoeInxmlfile = DataShoe()
 
+        Timber.i("hhhhhhh"+binding.dataShoeInxmlfile?.color)
+        binding.buttonSaveShoe.setOnClickListener{
+            Timber.i("kkkkkkkkkkkkk")
+            Timber.i(binding.dataShoeInxmlfile?.model)
+            val gg2: String = it.toString()+ "this is list"
+            Toast.makeText(context,gg2, Toast.LENGTH_LONG).show()
+            Timber.i("kkkkkkkkkkkkk")
             shoeListingsViewModel.addShoes(shoeListingsViewModel.shoe)
-/*            DataShoe(
+
+
+           DataShoe(
                 "1",
                 binding.shoeModelEdit.text.toString(),
                 binding.shoeSizeEdit.text.toString(),
@@ -65,7 +78,7 @@ class ShoeDetailFragment : Fragment() {
             viewModel.saveCurrentDetail(detailsShoeNumberss)
             val gg: String = binding.shoeModelEdit.text.toString()
             //val gg: String = it.toString()
-            Toast.makeText(context,gg, Toast.LENGTH_LONG).show()*/
+            Toast.makeText(context,gg, Toast.LENGTH_LONG).show()
             //Navigation.createNavigateOnClickListener(R.id.action_shoeDetailFragment_to_shoeListFragment)
 
             view?.findNavController()?.navigate(R.id.action_shoeDetailFragment_to_shoeListFragment22)

@@ -17,11 +17,11 @@ class CustomAdapter(private var listOfShoes: MutableList<DataShoe>) : RecyclerVi
 
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
         val shoe = listOfShoes[position]
-        viewHolder.shoeNumber.text = shoe.number
+/*        viewHolder.shoeNumber.text = shoe.number
         viewHolder.shoeModel.text = shoe.model
         viewHolder.shoeSize.text = shoe.size
         viewHolder.shoeColor.text = shoe.color
-        viewHolder.shoeDescription.text = shoe.description
+        viewHolder.shoeDescription.text = shoe.description*/
     }
 
     override fun getItemCount(): Int {
