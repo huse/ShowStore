@@ -2,14 +2,16 @@
 
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+
+    >
 
     <data>
-        <variable
+<!--        <variable
             name="ViewHolder"
-            type="com.hus.kpr.showstore.recycler.ViewHolder" />
+            type="com.hus.kpr.showstore.recycler.ViewHolder" />-->
         <variable
-            name="DataShoe2"
+            name="datashoe22"
             type="com.hus.kpr.showstore.data.DataShoe" />
 
     </data>
@@ -119,30 +121,24 @@
             tools:layout_editor_absoluteX="16dp"
             tools:layout_editor_absoluteY="20dp">
 
+
             <TextView
-                android:id="@+id/desc"
+                android:id="@+id/descep"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/shoe_descriptions"
-                android:layout_marginEnd="@android:dimen/app_icon_size"
-                android:padding="@android:dimen/dialog_min_width_minor" />
+                android:text="@string/shoe_descriptions" />
 
             <TextView
                 android:id="@+id/space"
                 android:layout_width="60dp"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="@android:dimen/app_icon_size"
-
-                android:text="   hhjhjhkjh "
-                android:padding="@android:dimen/dialog_min_width_minor" />
+                android:text="    " />
 
             <TextView
                 android:id="@+id/desc_text_row"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/number"
-
-                android:layout_marginStart="@android:dimen/app_icon_size" />
+                android:text="@string/number" />
 
 
         </LinearLayout>

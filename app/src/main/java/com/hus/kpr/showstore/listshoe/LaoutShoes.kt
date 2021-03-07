@@ -9,10 +9,11 @@ import com.hus.kpr.showstore.data.DataShoe
 import com.hus.kpr.showstore.databinding.TextRowItemBinding
 
 import android.widget.LinearLayout
+import com.hus.kpr.showstore.databinding.FragmentShoeListList2Binding
 import com.hus.kpr.showstore.databinding.FragmentShoeListListBinding
 
 class LaoutShoes: LinearLayout {
-
+    //private lateinit var binding: TextRowItemBinding
     constructor(context: Context) : super(context)
     constructor(context: Context, attrs: AttributeSet?) : super(context, attrs)
     constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : super(context, attrs, defStyleAttr)
